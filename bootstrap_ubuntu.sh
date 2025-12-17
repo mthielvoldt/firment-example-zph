@@ -3,10 +3,16 @@ sudo apt install --no-install-recommends git cmake ninja-build gperf \
   xz-utils file make gcc gcc-multilib g++-multilib libsdl2-dev libmagic1
 
 if [ ! -d ".venv" ]; then
-  python3 -m venv .venv
-  source .venv/bin/activate
-  pip install west
-  west packages pip --install
+  python3 -m venv .venv;
+  source .venv/bin/activate;
+  pip install west;
+  west packages pip --install;
 else
-  source .venv/bin/activate
+  source .venv/bin/activate;
+fi
+
+if ls -d "zephyr-sdk-*"; then
+  echo "SDK already present.";
+else
+  west sdk install -b $(pwd) --toolchains arm-zephyr-eabi;
 fi
