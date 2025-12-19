@@ -1,0 +1,15 @@
+{
+  "tasks": [
+    {
+      "label": "build-nucleo",
+      "type": "process",
+      "options": {
+        "cwd": "${workspaceFolder}/build/nucleo",
+      },
+      "command": "cmake",
+      "args": ["--build", "."],
+      "detail": "preLaunch: build for nucleo board"
+    }, 
+  ],
+  "version": "2.0.0"
+}
