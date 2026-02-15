@@ -8,4 +8,6 @@ if [ ! "$VIRTUAL_ENV" ]; then
   . .venv/bin/activate
 fi
 
+export ZEPHYR_SDK_INSTALL_DIR="$(pwd)/zephyr-sdk-0.17.4"
+
 west build -b nucleo_l476rg --build-dir build/nucleo app
